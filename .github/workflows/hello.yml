@@ -1,12 +1,21 @@
-name: My First Action
+name: CI/CD Pipeline
 
 on:
   push:
 
 jobs:
-  hello-job:
+  build-test-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Say Hello
-        run: echo "Hello World"
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Run Tests
+        run: echo "Testing..."
+
+      - name: Build
+        run: echo "Building..."
+
+      - name: Deploy
+        run: echo "Deploying..."
